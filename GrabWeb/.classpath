@@ -13,8 +13,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="D:/lib/apache.HttpClient/commons-codec-1.4.jar"/>
-	<classpathentry kind="lib" path="D:/lib/apache.HttpClient/commons-httpclient-3.0.1.jar"/>
-	<classpathentry kind="lib" path="D:/lib/apache.HttpClient/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
