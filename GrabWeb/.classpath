@@ -13,5 +13,10 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/lib/htmlparser_jar包/filterbuilder.jar"/>
+	<classpathentry kind="lib" path="D:/lib/htmlparser_jar包/htmllexer.jar"/>
+	<classpathentry kind="lib" path="D:/lib/htmlparser_jar包/htmlparser.jar"/>
+	<classpathentry kind="lib" path="D:/lib/htmlparser_jar包/sitecapturer.jar"/>
+	<classpathentry kind="lib" path="D:/lib/htmlparser_jar包/thumbelina.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
