@@ -25,9 +25,10 @@ import org.htmlparser.util.NodeList;
 import org.htmlparser.util.ParserException;
 
 public class GetWeb {
-	
+
+//读取html源码文件并以字符串形式返回，同时将其存放在本地txt文件中
 	public static String getWeb() throws Exception{
-		String strUrl = "http://www.baidu.com";
+		String strUrl = "http://www.cnblogs.com/sl-shilong/articles/2860412.html";
 		URL url = new URL(strUrl);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		conn.setConnectTimeout(10000);
@@ -42,43 +43,29 @@ public class GetWeb {
 		 	String line = "";
 		 	while((line = bufRead.readLine()) != null){
 		 		strBuf.append(line);
-		 		//strBuf.append("\n");
 		 	}
+		 	inRead.close();
+		 	bufRead.close();
 		 	
-		 	str = strBuf.toString();
-		 	//readByHtml(str);   //处理html，读取文字
-		 	//readTextAndLinkAndTitle(str);
+		 	str = strBuf.toString();  //StringBuffere转换为String类型
 		}
-		
-		FileOutputStream fos = new FileOutputStream("e:/baidu.txt");
+
+//将html源码写入本地系统的txt文件
+		FileOutputStream fos = new FileOutputStream("e:/baidu.txt"); 
 		byte[] str1 = str.getBytes();
 		fos.write(str1);
-		
+	 	fos.close();
+	 	
 		return str;
 	}
 	
-	public final static String testFilePath="e:"+File.separator+"baidu.txt";//
-    public final static String urlName="http://www.baidu.com";
-    
-    public static String readFile(String fileName) throws IOException{           //读本地文件内容
-        FileInputStream fin=new FileInputStream(fileName);
-        InputStreamReader inReader=new InputStreamReader(fin,"utf-8");
-        BufferedReader bReader=new BufferedReader(inReader);
-        StringBuffer content=new StringBuffer();
-        String line=null;
-        while((line=bReader.readLine())!=null){
-            content.append(line);
-            content.append("\n");
-        }
-        bReader.close();
-        inReader.close();
-        fin.close();
-        //System.out.println(content);
-        return content.toString();
-    }
+	public final static String testFilePath="e:"+File.separator+"baidu.txt";  // File.separator
+    //public final static String urlName="http://www.taobao.com/";
+   
     public static void parser(String content) throws ParserException{
-        Parser parser=Parser.createParser(content, "UTF-8");
-//Parser parser=new Parser(content);
+        Parser parser=new Parser(content);
+        parser.setEncoding( parser.getEncoding());  //parser.getEncoding()
+
         NodeList nodeList=null;
          
         //  注册特定标签的类  或者说某个特定的节点
@@ -142,7 +129,6 @@ public class GetWeb {
              
     }
     public static void main(String[] args) throws Exception {
-    	//String str = getWeb();
         String content=getWeb();
         parser(content);
     }
