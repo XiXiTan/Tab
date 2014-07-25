@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- 这是一个状态列表 drawable，为一个 action bar tab 的多种不同状态分别指定背景图片 -->
+<!-- staes when bbutton is not pressed --> 
+	<!-- non focused states -->   
+	<item android:state_focused="false"
+	    android:state_selected="false"
+	    android:state_pressed="false"
+	    android:drawable="@drawable/tab_unselected"></item>
+	<item android:state_focused="false"
+	    android:state_selected="true"
+	    android:state_pressed="false"
+	    android:drawable="@drawable/tab_selected"></item>
+	
+	<!-- focused states(such as when focused with a d-pad or mouse hover -->
+	<item android:state_focused="true"
+	    android:state_selected="false"
+	    android:state_pressed="false"
+	    android:drawable="@drawable/tab_unselected_focused"></item>
+	<item android:state_focused="true"
+	    android:state_selected="true"
+	    android:state_pressed="false"
+	    android:drawable="@drawable/tab_selected_focused"></item>
+	
+<!-- STATES WHEN BUTTON IS PRESSED -->	
+	<!-- states when button is pressed -->
+	<item android:state_focused="false"
+	    android:state_selected="false"
+	    android:state_pressed="true"
+	    android:drawable="@drawable/tab_unselected_pressed"></item>
+	<item android:state_focused="false"
+	    android:state_selected="true"
+	    android:state_pressed="true"
+	    android:drawable="@drawable/tab_selected_pressed"></item>
+	
+	<!-- focused states(such when focused with a d-pad or mouse hover-->
+	<item android:state_focused="true"
+	    android:state_selected="false"
+	    android:state_pressed="true"
+	    android:drawable="@drawable/tab_unselected_pressed"></item>
+	<item android:state_focused="true"
+	    android:state_selected="true"
+	    android:state_pressed="true"
+	    android:drawable="@drawable/tab_selected_pressed"></item>
+</selector>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.test"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/CustomActionBarTheme" >
+        
+        <!-- The main/home activity (it has no parent activity) -->
+        <activity
+            android:name="com.test.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- A child of the main activity -->
+        <activity
+            android:name="com.test.DispalyMessageActivity"
+            android:label="@string/title_activity_dispaly_message"
+            android:parentActivityName="com.test.MainActivity" >
+            <!-- android:parentActivityName属性在应用程序中该Activity的逻辑父类Activity的名称。 系统使用此值来实现默认导航操作  -->
+           
+           <!-- 下面的标签，可为安卓旧版本提供和上面相同的功能 -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.test.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
